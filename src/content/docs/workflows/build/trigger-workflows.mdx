@@ -181,7 +181,7 @@ let instance = await env.MY_WORKFLOW.get("abc-123");
 await instance.resume(); // Returns Promise<void>
 ```
 
-Calling `resume` on an instance that is already running will throw an error.
+Calling `resume` on an instance that is not currently paused will have no effect.
 
 :::caution
 If you have reached the maximum concurrent instances for your Workflow, resuming an instance may not restart it immediately. The instance will be queued until a concurrency slot becomes available.
